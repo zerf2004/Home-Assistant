@@ -7,7 +7,7 @@ Automations.yaml
     platform: event
   condition: []
   action:
-  - data:
+  - data_template:
       entity_id: '{{ trigger.event.data.entity_id }}'
       media_content_id: '{{ trigger.event.data.media_content_id }}'
       media_content_type: '{{ trigger.event.data.media_content_type }}'
