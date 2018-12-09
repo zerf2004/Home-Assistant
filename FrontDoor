@@ -1,0 +1,19 @@
+Automations.yaml
+- id: '1544333068934'
+  alias: Front Door Camera
+  trigger:
+  - event_data: {}
+    event_type: ifttt_webhook_received
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: '{{ trigger.event.data.entity_id }}'
+      media_content_id: '{{ trigger.event.data.media_content_id }}'
+      media_content_type: '{{ trigger.event.data.media_content_type }}'
+    service: media_player.play_media
+    
+What I send in the body from IFFT
+{ "entity_id": "media_player.kitchen_display", 
+"media_content_id":"http://192.168.1.90:8181/mjpg/frontdoor/video.mjpg",
+"media_content_type":"image/jpg" }
